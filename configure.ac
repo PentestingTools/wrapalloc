@@ -54,8 +54,7 @@ AC_CHECK_FUNCS([clock_gettime getpagesize mmap memset munmap strdup strstr strto
 
 AC_CONFIG_FILES([Makefile
                  src/Makefile
-                 src/Makefile.am
-                 src/wrapalloc-0.1.pc
+                 src/wrapalloc.pc
                  tests/Makefile
                  ])
 

@@ -17,6 +17,6 @@ include_HEADERS = \
     wa_util.h
 
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = wrapalloc-@VERSION@.pc
+pkgconfig_DATA = wrapalloc.pc
 
-CLEANFILES = wrapalloc-@VERSION@.pc
+CLEANFILES = wrapalloc.pc
