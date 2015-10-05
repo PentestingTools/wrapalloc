@@ -18,6 +18,7 @@ EXTRA_DIST = test_wrapalloc.sh.in
 
 test_wrapalloc.sh$(EXEEXT): test_wrapalloc.sh.in Makefile test_wrapalloc
 	sed -e 's|[@]abs_builddir[@]|$(abs_builddir)|g' \
+	    -e 's|[@]top_builddir[@]|$(top_builddir)|g' \
 	    -e 's|[@]preload_library[@]|../src/libwrapalloc.la|g' \
 	    $< > $@
 	chmod +x $@

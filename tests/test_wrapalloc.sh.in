@@ -37,10 +37,11 @@ test_name="test_wrapalloc"
 
 build_dir="@abs_builddir@"
 test_path="$build_dir/$test_name"
+libtool="@top_builddir@/libtool"
 
 preload_library="$build_dir/@preload_library@"
 
-for file in "$test_path" "$preload_library"
+for file in "$test_path" "$preload_library" "$libtool"
 do
     [ -e "$file" ] || die "file $file not found"
 done
@@ -48,7 +49,7 @@ done
 # Install the preload library to a temporary location since we need the
 # full path to the shared library for LD_PRELOAD.
 install_dir=$(mktemp -d --tmpdir="$builddir")
-libtool --mode=install install \
+$libtool --mode=install install \
     "$preload_library" "$install_dir" >/dev/null 2>&1
 
 installed_lib=$(basename "$preload_library")
@@ -81,5 +82,5 @@ echo "OK - all $test_path tests worked as expected"
 echo
 
 # clean up
-libtool --mode=uninstall \
+$libtool --mode=uninstall \
     rm "$install_dir/$installed_lib" >/dev/null 2>&1
