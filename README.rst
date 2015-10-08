@@ -1,11 +1,11 @@
+.. image:: https://img.shields.io/badge/license-GPL-3.0.svg
+
 .. image:: https://travis-ci.org/jamesodhunt/wrapalloc.svg?branch=master
    :target: https://travis-ci.org/jamesodhunt/wrapalloc
 
 .. image:: https://scan.coverity.com/projects/5310/badge.svg
    :target: https://scan.coverity.com/projects/wrapalloc
    :alt: Coverity Scan Build Status
-
-.. image:: https://img.shields.io/badge/license-GPL-3.0.svg
 
 .. image:: https://img.shields.io/badge/donate-flattr-red.svg
    :alt: Donate via flattr
@@ -21,7 +21,7 @@ wrapalloc
 Overview
 --------
 
-wrapalloc is a tool that intercepts calls to the libc memory
+``wrapalloc`` is a tool that intercepts calls to the libc memory
 management routines. This allows it:
 
 - perform checks on:
@@ -128,7 +128,8 @@ variables to control the behaviour of this library.
 Limitations
 -----------
 
-- Won't work correctly for threaded apps (due to simplistic setting of 'caller').
+- Won't work correctly for threaded apps (due to simplistic setting of
+  'caller').
 
 - Although the code handles it, the library cannot be built to use the
   dynamic linker rather than the linker trick since the dynamic linker
@@ -266,3 +267,7 @@ Footnotes
 
    The linker trick is "``ld -Wl,--wrap=malloc,--wrap=calloc,--wrap=free ...``".
 
+Author
+------
+
+``wrapalloc`` was written by James Hunt <jamesodhunt@ubuntu.com>.
